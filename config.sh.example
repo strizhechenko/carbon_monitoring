@@ -1,0 +1,4 @@
+DB_HOST=10.0.0.1
+DB_NAME=mydb
+EMAIL=user@example.com
+EMAIL_PASSWORD=123

@@ -1,0 +1,9 @@
+*.py[co]
+.idea
+env
+testenv
+*.egg-info/
+build/
+dist/
+config.sh
+metrics/
