@@ -10,8 +10,8 @@
 
 Создайте метрику в папке metrics с названием series, которую мы хотим отслеживать, например:
 
-
-	cat > dieta.json << EOF
+	mkdir -p metrics
+	cat > metrics/dieta.json << EOF
 	{
 		"alerts": {
 			"to_my_mail": {
