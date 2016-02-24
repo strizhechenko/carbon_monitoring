@@ -16,6 +16,7 @@ from carbon_monitoring.twitter import twitter
 from carbon_monitoring.slack import slack
 from carbon_monitoring.webhook import webhook
 from carbon_monitoring.sms import sms
+from carbon_monitoring.execute import execute
 
 
 def choose_alert_func(alert_type):
@@ -30,8 +31,8 @@ def choose_alert_func(alert_type):
         return webhook
     if alert_type == 'sms':
         return sms
-    # if alert_type == 'execute':
-    #     return execute
+    if alert_type == 'execute':
+        return execute
     raise NotImplementedError(alert_type)
 
 
