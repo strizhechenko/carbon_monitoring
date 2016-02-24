@@ -9,6 +9,6 @@ METRICS='./metrics'
 
 . config.sh
 
-for var in DB_{NAME,HOST,PORT}, EMAIL{,_PASSWORD,_SERVER,_PORT}, METRICS; do
+for var in DB_{NAME,HOST,PORT} EMAIL{,_PASSWORD,_SERVER,_PORT} METRICS; do
 	export $var
 done

@@ -13,6 +13,7 @@
 
 from carbon_monitoring.mail import email
 from carbon_monitoring.twitter import twitter
+from carbon_monitoring.slack import slack
 
 def choose_alert_func(alert_type):
     """ отдаёт функцию с сигнатурой alert_data, string по строке-типу алерта"""
@@ -26,8 +27,8 @@ def choose_alert_func(alert_type):
     #     return email
     # if alert_type == 'execute':
     #     return email
-    # if alert_type == 'slack':
-    #     return email
+    if alert_type == 'slack':
+        return slack
     raise NotImplementedError(alert_type)
 
 def alert(metric, state, value):
