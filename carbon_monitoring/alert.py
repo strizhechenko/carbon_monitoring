@@ -21,14 +21,14 @@ def choose_alert_func(alert_type):
         return twitter
     if alert_type == 'email':
         return email
+    if alert_type == 'slack':
+        return slack
     # if alert_type == 'sms':
     #     return sms
     # if alert_type == 'webhook':
-    #     return email
+    #     return webhook
     # if alert_type == 'execute':
-    #     return email
-    if alert_type == 'slack':
-        return slack
+    #     return execute
     raise NotImplementedError(alert_type)
 
 def alert(metric, state, value):
@@ -37,6 +37,7 @@ def alert(metric, state, value):
         string = "%s: %s=%d" % (state, metric['name'], value)
         alert_func = choose_alert_func(val.get('type'))
         try:
+            print val.get('type')
             alert_func(val, string)
         except Exception as error:
             print error

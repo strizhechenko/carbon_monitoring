@@ -7,7 +7,7 @@ from urllib import urlencode
 from urllib2 import urlopen
 
 DB_HOST = os.environ.get('DB_HOST', '127.0.0.1')
-DB_PORT = int(os.environ.get('DB_HOST', 8086))
+DB_PORT = int(os.environ.get('DB_PORT', '8086'))
 
 
 def get_result(metric, db_host, db_port):
