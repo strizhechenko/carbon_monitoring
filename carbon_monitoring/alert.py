@@ -15,6 +15,8 @@ from carbon_monitoring.mail import email
 from carbon_monitoring.twitter import twitter
 from carbon_monitoring.slack import slack
 from carbon_monitoring.webhook import webhook
+from carbon_monitoring.sms import sms
+
 
 def choose_alert_func(alert_type):
     """ отдаёт функцию с сигнатурой alert_data, string по строке-типу алерта"""
@@ -26,11 +28,12 @@ def choose_alert_func(alert_type):
         return slack
     if alert_type == 'webhook':
         return webhook
-    # if alert_type == 'sms':
-    #     return sms
+    if alert_type == 'sms':
+        return sms
     # if alert_type == 'execute':
     #     return execute
     raise NotImplementedError(alert_type)
+
 
 def alert(metric, state, value):
     """ создание алертов """
