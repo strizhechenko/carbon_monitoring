@@ -5,7 +5,8 @@ import os
 import json
 from urllib2 import urlopen
 
+
 def slack(val, string):
     """ всего-то отправить текст urlopen'ом """
-    HOOK = os.environ.get('SLACK_HOOK_URL')
-    urlopen(HOOK, data=json.dumps({"text": string,}))
+    hook = os.environ.get('SLACK_HOOK_URL')
+    urlopen(hook, data=json.dumps({"text": string,}))

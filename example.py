@@ -7,12 +7,12 @@
 Затем события агрегируются по получателям и отсылаются им скопом.
 """
 
-__author__ = 'Oleg Strizhechenko <oleg.strizhechenko@gmail.com>'
-
 import os
 from carbon_monitoring.alert import alert
 from carbon_monitoring.metrics import metrics_load, eval_state
 from carbon_monitoring.influxdb import QUERY
+
+__author__ = 'Oleg Strizhechenko <oleg.strizhechenko@gmail.com>'
 
 def process_metric(metric):
     """ обработка одной метрики """
