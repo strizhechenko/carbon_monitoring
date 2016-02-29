@@ -1,3 +1,4 @@
 twitterbot-utils>=0.1.4
 pylint
 ipython<2
+APScheduler

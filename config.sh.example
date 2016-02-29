@@ -3,3 +3,4 @@ DB_NAME=mydb
 EMAIL=user@example.com
 EMAIL_PASSWORD=123
 SLACK_HOOK_URL='get your own at https://api.slack.com/incoming-webhooks'
+METRICS_REPO='https://github.com/strizhechenko/carbon_monitoring_default_metrics'

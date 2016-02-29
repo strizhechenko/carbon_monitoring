@@ -15,3 +15,4 @@ done
 
 export SLACK_HOOK_URL
 export METRICS
+export METRICS_REPO

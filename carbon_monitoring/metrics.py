@@ -18,7 +18,7 @@ def metric_load(filename):
     with open(filename) as config:
         metric = json.load(config)
         for key in ('warning', 'error'):
-            metric[key] = eval(metric[key])
+            metric[key] = eval("lambda value: %s" % (metric[key],))
         metric['name'] = filename.split('/')[-1].replace('.json', '')
         return metric
     raise IOError(u'Проклятые англичане спиздили файл, пока мы его читали')
