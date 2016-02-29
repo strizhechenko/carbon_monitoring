@@ -54,13 +54,13 @@ def main():
     for metric in metrics:
         trigger = IntervalTrigger(**metric.get('check_freq'))
         sched.add_job(process_metric, trigger, args=(metric, storage))
-        sleep(0.2)
+        sleep(0.1)
     for metric in metrics:
         for data in metric.get('alerts').values():
             data['last'] = int(time())
             trigger = IntervalTrigger(**metric.get('check_freq'))
             sched.add_job(process_alerts, trigger, args=(metric, storage, data))
-            sleep(0.2)
+            sleep(0.1)
     sched.start()
 
 
