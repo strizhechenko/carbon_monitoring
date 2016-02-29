@@ -8,6 +8,7 @@
 """
 
 import os
+import sys
 from carbon_monitoring.alert import alert
 from carbon_monitoring.metrics import metrics_load, eval_state
 from carbon_monitoring.influxdb import QUERY
@@ -18,8 +19,8 @@ def process_metric(metric):
     """ обработка одной метрики """
     value = QUERY(metric)
     state = eval_state(metric, value)
-    print "%s: %s" % (metric['name'], state)
-    if not state == 'OK':
+    print "%s: %d (%s)" % (metric['name'], value, state)
+    if not state == 'OK' and '--dry' not in sys.argv:
         alert(metric, state, value)
 
 def main():

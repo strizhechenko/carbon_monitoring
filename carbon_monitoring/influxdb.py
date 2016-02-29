@@ -13,7 +13,7 @@ DB_PORT = int(os.environ.get('DB_PORT', '8086'))
 def get_result(metric, db_host, db_port):
     """ забирает последнее значение из базы """
     db_name = metric.get('db_name', os.environ.get('DB_NAME', '_default'))
-    query_tmplt = 'SELECT value FROM %s WHERE %s limit 1'
+    query_tmplt = 'SELECT last(value) FROM %s WHERE %s'
     _query = {
         'db': db_name,
         'q':  query_tmplt % (metric['name'], metric['filter']),
