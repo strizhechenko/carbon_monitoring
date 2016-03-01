@@ -14,7 +14,7 @@ def read(*paths):
         return f.read()
 
 
-INSTALL_REQS = [str(ir.req) for ir in parse_reqs('requirements.txt')]
+INSTALL_REQS = [str(ir.req) for ir in parse_reqs('requirements.txt', session=1)]
 
 setup(
     name='carbon_monitoring',
@@ -36,6 +36,6 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Topic :: Software Development',
-        'Topic :: Utilities',
+        'Topic :: Utilities'
     ],
 )
